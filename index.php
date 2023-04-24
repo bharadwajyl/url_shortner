@@ -1,7 +1,7 @@
 <?php
     @include_once("./root/db.php");
     if (isset($_GET["redirect"])){
-        $url ="https://levioosa.000webhostapp.com/Shorten/". $_GET["redirect"];
+        $url ="https://".$_SERVER['REQUEST_URI']. $_GET["redirect"];
         $redirect = $conn->query("SELECT l_url FROM gol_url WHERE s_url = '$url'");
         if ($redirect->num_rows > 0) {
             while($row = $redirect->fetch_assoc()) {
