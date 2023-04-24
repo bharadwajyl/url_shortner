@@ -35,7 +35,7 @@ class Gol{
         $alpha = alphanumeric(13);
         
         //compress url
-        $c_url = "https://levioosa.000webhostapp.com/Shorten/$alpha";
+        $c_url = "https://".$_SERVER['REQUEST_URI']."$alpha";
         
         //DB
         @include_once("db.php");
